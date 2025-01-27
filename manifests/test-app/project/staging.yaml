@@ -28,10 +28,11 @@ spec:
             path: ./checkout
       - uses: yaml-update
         as: update-image
-        path: ./checkout/manifests/test-app/${{ vars.environment }}/test-app.yaml
-        updates:
-        - key: .spec.images.1.newTag
-          value: ${{ vars.imageTag }}
+        config:
+          path: ./checkout/manifests/test-app/${{ vars.environment }}/test-app.yaml
+          updates:
+          - key: .spec.images.1.newTag
+            value: ${{ vars.imageTag }}
       - uses: git-commit
         as: commit
         config:
