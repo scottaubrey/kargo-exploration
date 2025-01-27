@@ -9,10 +9,5 @@ spec:
       kind: Warehouse
       name: github
     sources:
-      direct: true
-  - origin:
-      kind: Warehouse
-      name: github
-    sources:
       stages:
       - staging
