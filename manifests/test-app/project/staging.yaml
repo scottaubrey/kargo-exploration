@@ -1,0 +1,12 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: staging
+  namespace: test-app
+spec:
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: github
+    sources:
+      direct: true
