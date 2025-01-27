@@ -7,7 +7,7 @@ spec:
   subscriptions:
   - git:
       repoURL: https://github.com/scottaubrey/test-app
-      branch: master
+      branch: main
   - image:
       repoURL: ghcr.io/scottaubrey/test-app
       gitRepoURL: https://github.com/scottaubrey/test-app
