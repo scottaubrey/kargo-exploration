@@ -1,8 +1,8 @@
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Warehouse
 metadata:
-  name: warehouse
-  namespace: search
+  name: github
+  namespace: test-app
 spec:
   subscriptions:
   - git:
