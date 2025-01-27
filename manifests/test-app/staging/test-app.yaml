@@ -14,7 +14,7 @@ spec:
   targetNamespace: test-app--staging
   images:
     - name: ghcr.io/scottaubrey/test-app
-      newTag: 20250127165449.0.0-gac98bee-12994085852-1
+      newTag: 20250127175153.0.0-g2b715f3-12995120833-1
   postBuild:
     substitute:
       # deployment vars
