@@ -1,14 +1,14 @@
-# apiVersion: kargo.akuity.io/v1alpha1
-# kind: Warehouse
-# metadata:
-#   name: github
-#   namespace: test-app
-# spec:
-#   subscriptions:
-#   - git:
-#       repoURL: https://github.com/scottaubrey/test-app
-#       branch: master
-#   - image:
-#       repoURL: ghcr.io/scottaubrey/test-app
-#       gitRepoURL: https://github.com/scottaubrey/test-app
-#       imageSelectionStrategy: NewestBuild
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: github
+  namespace: test-app
+spec:
+  subscriptions:
+  - git:
+      repoURL: https://github.com/scottaubrey/test-app
+      branch: master
+  - image:
+      repoURL: ghcr.io/scottaubrey/test-app
+      gitRepoURL: https://github.com/scottaubrey/test-app
+      imageSelectionStrategy: NewestBuild
