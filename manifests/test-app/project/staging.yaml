@@ -12,13 +12,10 @@ spec:
       direct: true
   promotionTemplate:
     spec:
-      vars:
-      - name: gitopsRepo
-        value: https://github.com/scottaubrey/kargo-exploration
       steps:
       - uses: git-clone
         config:
-          repoURL: ${{ vars.gitopsRepo }}
+          repoURL: https://github.com/scottaubrey/kargo-exploration
           checkout:
           - branch: main
             path: ./checkout
