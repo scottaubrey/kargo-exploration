@@ -1,0 +1,21 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: test-app
+  namespace: test-app--staging
+spec:
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  path: ./kustomizations/test-app
+  prune: true
+  targetNamespace: test-app--staging
+  images:
+    - name: ghcr.io/scottaubrey/test-app
+      newTag: 20250127165449.0.0-gac98bee-12994085852-1
+  postBuild:
+    substitute:
+      # deployment vars
+      hostname: test-app-staging.test.cluster
