@@ -29,6 +29,9 @@ spec:
       - uses: git-commit
         as: commit
         config:
-          path: ${{ vars.outPath }}
+          path: ./checkout
           messageFromSteps:
           - update-image
+      - uses: git-push
+        config:
+          path: ./checkout
