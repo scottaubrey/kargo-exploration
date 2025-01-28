@@ -11,4 +11,4 @@ spec:
   - image:
       repoURL: ghcr.io/scottaubrey/test-app
       gitRepoURL: https://github.com/scottaubrey/test-app
-      imageSelectionStrategy: NewestBuild
+      imageSelectionStrategy: SemVer
