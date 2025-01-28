@@ -11,3 +11,28 @@ spec:
     sources:
       stages:
       - staging
+  promotionTemplate:
+    spec:
+      steps:
+      - uses: git-clone
+        config:
+          repoURL: https://github.com/scottaubrey/kargo-exploration
+          checkout:
+          - branch: main
+            path: ./checkout
+      - uses: yaml-update
+        as: update-image
+        config:
+          path: ./checkout/manifests/test-app/prod/test-app.yaml
+          updates:
+          - key: spec.images.0.newTag
+            value: ${{ imageFrom("ghcr.io/scottaubrey/test-app").Tag }}
+      - uses: git-commit
+        as: commit
+        config:
+          path: ./checkout
+          messageFromSteps:
+          - update-image
+      - uses: git-push
+        config:
+          path: ./checkout
