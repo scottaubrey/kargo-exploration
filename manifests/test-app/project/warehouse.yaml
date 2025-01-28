@@ -6,9 +6,9 @@ metadata:
 spec:
   subscriptions:
   - git:
-      repoURL: git@github.com:scottaubrey/kargo-exploration.git
+      repoURL: https://github.com/scottaubrey/test-app
       branch: main
   - image:
       repoURL: ghcr.io/scottaubrey/test-app
-      gitRepoURL: git@github.com:scottaubrey/kargo-exploration.git
+      gitRepoURL: https://github.com/scottaubrey/test-app
       imageSelectionStrategy: NewestBuild
